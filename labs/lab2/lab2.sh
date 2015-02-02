@@ -23,3 +23,9 @@ samtools sort data/ERR001014.filt.bwa_aln.default.bam data/ERR001014.filt.bwa_al
 
 # Index BAM file to enable fast random access
 samtools index data/ERR001014.filt.bwa_aln.default.sorted.bam
+
+# view
+samtools view ERR001014.filt.bwa_aln.default.sorted.bam
+
+# output of all	reads	matching region 18,000,000 – 18,080,000 on chr22
+samtools view ERR001014.filt.bwa_aln.default.sorted.bam chr22_hg19:18000000-18080000 > chr22_part.ERR001014.filt.bwa_aln.default.sam
