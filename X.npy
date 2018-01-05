@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Breast Histology Images | Kaggle</title>
+    <meta charset="utf-8" />
+    <meta name="robots" content="index, follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">    <meta name="theme-color" content="#008ABC" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" /><link rel="dns-prefetch" href="https://stats.g.doubleclick.net" /><link rel="dns-prefetch" href="https://js.intercomcdn.com" /><link rel="preload" href="https://az416426.vo.msecnd.net/scripts/a/ai.0.js" as=script /><link rel="dns-prefetch" href="https://kaggle2.blob.core.windows.net" />
+    <link href="/content/v/d420a040e581/kaggle/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="manifest" href="/static/json/manifest.json">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic" rel='stylesheet' type='text/css'>
+                <link rel="stylesheet" type="text/css" href="/static/assets/vendor.css?v=72f4ef2ebe4f"/>
+        <link rel="stylesheet" type="text/css" href="/static/assets/app.css?v=8fedb33f8748"/>
+        <script>
+
+            (function () {
+                var originalError = window.onerror;
+
+                window.onerror = function (message, url, lineNumber, columnNumber, error) {
+                    var handled = originalError && originalError(message, url, lineNumber, columnNumber, error);
+                    var blockedByCors = message && message.toLowerCase().indexOf("script error") >= 0;
+                    return handled || blockedByCors;
+                };
+            })();
+        </script>
+    <script>
+        var appInsights=window.appInsights||function(config){
+        function i(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},u=document,e=window,o="script",s="AuthenticatedUserContext",h="start",c="stop",l="Track",a=l+"Event",v=l+"Page",y=u.createElement(o),r,f;y.src=config.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(y);try{t.cookie=u.cookie}catch(p){}for(t.queue=[],t.version="1.0",r=["Event","Exception","Metric","PageView","Trace","Dependency"];r.length;)i("track"+r.pop());return i("set"+s),i("clear"+s),i(h+a),i(c+a),i(h+v),i(c+v),i("flush"),config.disableExceptionTracking||(r="onerror",i("_"+r),f=e[r],e[r]=function(config,i,u,e,o){var s=f&&f(config,i,u,e,o);return s!==!0&&t["_"+r](config,i,u,e,o),s}),t
+        }({
+            instrumentationKey:"5b3d6014-f021-4304-8366-3cf961d5b90f",
+            disableAjaxTracking: true
+        });
+        window.appInsights=appInsights;
+        appInsights.trackPageView();
+    </script>
+
+
+
+
+
+    <script>
+    window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date;
+    ga('create', 'UA-12629138-1', 'auto');
+    ga('set', 'displayFeaturesTask', null);
+    ga('send', 'pageview');
+    </script>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window,document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+    fbq("set", "autoConfig", "false", "136809193586742");
+    fbq('init', '136809193586742');
+    fbq('track', 'PageView');
+</script>
+<noscript>
+    <img height="1" width="1" src="https://www.facebook.com/tr?id=136809193586742&ev=PageView&noscript=1"/>
+</noscript>
+
+
+
+    <script>
+          window.intercomSettings = {
+            app_id: "koj6gxx6"
+          };
+    </script>
+<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/koj6gxx6';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@kaggledatasets"/>
+    <meta name="og:url" content="https://www.kaggle.com/simjeg/lymphoma-subtype-classification-fl-vs-cll" />
+    <meta name="og:title" content="Breast Histology Images" />
+    <meta name="og:description" content="Classify IDC vs non IDC images" />
+    <meta name="og:image" content="https://kaggle2.blob.core.windows.net/datasets-images/1260/2245/bd7026c82e3f351fdd2c33118ed2e7ae/dataset-card.png" />
+
+
+
+
+    <script type="application/ld+json">{"@context":"http://schema.org/","@type":"Dataset","name":"Breast Histology Images","description":"This dataset consists of  5547 breast histology images of size 50 x 50 x 3, curated from [Andrew Janowczyk website][1] and used for a data science tutorial at [Epidemium][2].  The goal is to classify cancerous images (IDC : invasive ductal carcinoma) vs non-IDC images.\n\n\n  [1]: http://www.andrewjanowczyk.com/use-case-6-invasive-ductal-carcinoma-idc-segmentation/\n  [2]: http://www.epidemium.cc/","url":"https://www.kaggle.comsimjeg/lymphoma-subtype-classification-fl-vs-cll","sameAs":"https://staging.kaggle.com/simjeg/lymphoma-subtype-classification-fl-vs-cll","version":3,"keywords":["medium"],"license":{"@type":"CreativeWork","name":"CC0: Public Domain","url":"https://creativecommons.org/publicdomain/zero/1.0/"},"identifier":"1260","includedInDataCatalog":{"@type":"DataCatalog","name":"Kaggle","url":"https://www.kaggle.com"},"creator":{"@type":"Person","name":"Jegs","url":"https://www.kaggle.com//simjeg","image":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/412830-gp.jpg"},"distribution":[{"@type":"DataDownload","requiresSubscription":true,"encodingFormat":"zip","fileFormat":"zip","contentUrl":"https://www.kaggle.com//simjeg/lymphoma-subtype-classification-fl-vs-cll/downloads/breast-histology-images.zip","contentSize":"34255944 bytes"},{"@type":"DataDownload","requiresSubscription":true,"encodingFormat":"npy","fileFormat":"npy","contentUrl":"https://www.kaggle.com//simjeg/lymphoma-subtype-classification-fl-vs-cll/downloads/X.npy","contentSize":"34255583 bytes"},{"@type":"DataDownload","requiresSubscription":true,"encodingFormat":"npy","fileFormat":"npy","contentUrl":"https://www.kaggle.com//simjeg/lymphoma-subtype-classification-fl-vs-cll/downloads/Y.npy","contentSize":"44456 bytes"}],"commentCount":3,"dateModified":"2017-05-13T09:14:28.22","discussionUrl":"https://www.kaggle.comsimjeg/lymphoma-subtype-classification-fl-vs-cll/discussion","alternateName":"Classify IDC vs non IDC images","isAccessibleForFree":true,"thumbnailUrl":"https://kaggle2.blob.core.windows.net/datasets-images/1260/2245/bd7026c82e3f351fdd2c33118ed2e7ae/dataset-card.png","interactionStatistic":[{"@type":"InteractionCounter","interactionType":"http://schema.org/CommentAction","userInteractionCount":3},{"@type":"InteractionCounter","interactionType":"http://schema.org/DownloadAction","userInteractionCount":303},{"@type":"InteractionCounter","interactionType":"http://schema.org/ViewAction","userInteractionCount":1705},{"@type":"InteractionCounter","interactionType":"http://schema.org/LikeAction","userInteractionCount":8}]}</script>
+
+
+    <script src="/static/assets/manifest.js?v=47a28ec84654"></script>
+<script src="/static/assets/vendor.js?v=1321ab7eaee3"></script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+<div class="site-layout">
+        <div class="site-layout__header">
+            <div data-component-name="SiteHeaderContainer"></div><script>var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({});performance && performance.mark && performance.mark("SiteHeaderContainer.componentCouldBootstrap");</script>
+        </div>
+
+    <div class="site-layout__main-content">
+
+
+<div data-component-name="DatasetContainer"></div><script>var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({"datasetId":1260,"overview":"Classify IDC vs non IDC images","description":"This dataset consists of  5547 breast histology images of size 50 x 50 x 3, curated from [Andrew Janowczyk website][1] and used for a data science tutorial at [Epidemium][2].  The goal is to classify cancerous images (IDC : invasive ductal carcinoma) vs non-IDC images.\n\n\n  [1]: http://www.andrewjanowczyk.com/use-case-6-invasive-ductal-carcinoma-idc-segmentation/\n  [2]: http://www.epidemium.cc/","isRemoved":false,"isVersionRemoved":false,"isFeatured":false,"isSuperFeatured":false,"scheduledToBeFeatured":null,"scheduledToBeUnFeatured":null,"scheduledToBeSuperFeatured":null,"scheduledToBeUnSuperFeatured":null,"privateGroupId":null,"datasetVersionId":2256,"datasetVersionNumber":3,"lastVersionNumber":3,"datasetUrl":"/simjeg/lymphoma-subtype-classification-fl-vs-cll","datasetExternalUrl":"https://www.kaggle.com/simjeg/lymphoma-subtype-classification-fl-vs-cll","originalImageUrl":"https://kaggle2.blob.core.windows.net/datasets-images/1260/2245/bd7026c82e3f351fdd2c33118ed2e7ae/dataset-original.png","coverImageUrl":"https://kaggle2.blob.core.windows.net/datasets-images/1260/2245/bd7026c82e3f351fdd2c33118ed2e7ae/dataset-cover.png","cardImageUrl":"https://kaggle2.blob.core.windows.net/datasets-images/1260/2245/bd7026c82e3f351fdd2c33118ed2e7ae/dataset-card.png","thumbnailImageUrl":"https://kaggle2.blob.core.windows.net/datasets-images/1260/2245/bd7026c82e3f351fdd2c33118ed2e7ae/dataset-thumbnail.png","license":{"id":1,"name":"CC0: Public Domain","description":"CC0: Public Domain \u003ca href=\u0022https://creativecommons.org/publicdomain/zero/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/publicdomain/zero/1.0/","displaySequence":null},"voteCount":8,"upVoteUrl":"/simjeg/lymphoma-subtype-classification-fl-vs-cll/vote","creatorUserId":412830,"creatorDisplayName":"Jegs","ownerTwitter":null,"lastUpdated":"2017-05-13T09:14:28.22Z","downloadUrl":"/simjeg/lymphoma-subtype-classification-fl-vs-cll/downloads/breast-histology-images.zip","downloadSize":34255944,"newNotebookUrl":"/Scripts/NewNotebook?datasetVersionId=2256","newScriptUrl":"/Scripts/NewScriptAsync?datasetVersionId=2256","hasAlreadyVotedUp":false,"isOldDatasetVersion":false,"numberOfViews":1705,"numberOfDownloads":303,"numberOfScripts":7,"numberOfTopics":3,"privateGroupMemberCount":0,"canEdit":false,"canEditSlug":false,"canEditPublishStatus":false,"canEditFeatureStatus":false,"canEditPrivateGroup":false,"canEditDescription":false,"hideVersionStatuses":true,"cardImageLeft":317,"cardImageTop":0,"cardImageWidth":1560,"cardImageHeight":1560,"coverImageLeft":0,"coverImageTop":598,"coverImageWidth":2074,"coverImageHeight":436,"datasetVersions":[{"id":2256,"slug":"lymphoma-subtype-classification-fl-vs-cll","name":"Breast Histology Images","creationDate":"2017-05-13T09:14:28.22Z","versionNumber":3,"versionNotes":"Breast Histology Images dataset","thumbnailImageUrl":"https://kaggle2.blob.core.windows.net/datasets-images/1260/2245/bd7026c82e3f351fdd2c33118ed2e7ae/dataset-thumbnail.png","datasetVersionUrl":"/simjeg/lymphoma-subtype-classification-fl-vs-cll/version/3","status":"ready","isRemoved":false},{"id":2246,"slug":"lymphoma-subtype-classification-fl-vs-cll","name":"Lymphoma sub-type classification : FL vs CLL","creationDate":"2017-05-12T08:13:58.71Z","versionNumber":2,"versionNotes":"Separates .zip","thumbnailImageUrl":"https://kaggle2.blob.core.windows.net/datasets-images/1260/2245/bd7026c82e3f351fdd2c33118ed2e7ae/dataset-thumbnail.png","datasetVersionUrl":"/simjeg/lymphoma-subtype-classification-fl-vs-cll/version/2","status":"ready","isRemoved":false},{"id":2245,"slug":"lymphoma-subtype-classification-fl-vs-cll","name":"Lymphoma sub-type classification : FL vs CLL","creationDate":"2017-05-12T07:57:07.51Z","versionNumber":1,"versionNotes":"Initial release","thumbnailImageUrl":"https://kaggle2.blob.core.windows.net/datasets-images/1260/2245/bd7026c82e3f351fdd2c33118ed2e7ae/dataset-thumbnail.png","datasetVersionUrl":"/simjeg/lymphoma-subtype-classification-fl-vs-cll/version/1","status":"ready","isRemoved":false}],"scripts":[{"name":"Fork of Epidemium Tutorial","url":"/simjeg/fork-of-epidemium-tutorial","lastRunDate":"2017-05-19T08:09:01.19Z","totalVotes":4},{"name":"Predicting IDC in Breast Cancer Histology Images","url":"/paultimothymooney/predicting-idc-in-breast-cancer-histology-images","lastRunDate":"2018-01-03T00:58:12Z","totalVotes":2},{"name":"Fork of Epidemium Tutorial","url":"/apartin/fork-of-epidemium-tutorial","lastRunDate":"2017-05-23T19:40:57.203Z","totalVotes":1}],"discussions":[{"title":"more data","url":"/forums/f/3465/breast-histology-images/t/44602/more-data","lastPost":"2017-12-19T18:29:32.077Z","totalReplies":1},{"title":"Question about data","url":"/forums/f/3465/breast-histology-images/t/37044/question-about-data","lastPost":"2017-12-19T03:33:39.143Z","totalReplies":1},{"title":"Dataset suggestions","url":"/forums/f/3465/breast-histology-images/t/33429/dataset-suggestions","lastPost":"2017-05-23T15:48:38.17Z","totalReplies":0}],"contributors":[{"userId":412830,"totalScriptVotes":4,"totalScripts":1,"totalForumMessages":0,"totalForumMessageVotes":0,"totalScore":5.0,"displayName":"Jegs","performanceTier":"Expert","userUrl":"/simjeg","rank":"1st","userAvatarUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/412830-gp.jpg"},{"userId":1314380,"totalScriptVotes":2,"totalScripts":1,"totalForumMessages":2,"totalForumMessageVotes":0,"totalScore":5.0,"displayName":"paultimothymooney","performanceTier":"Contributor","userUrl":"/paultimothymooney","rank":"2nd","userAvatarUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/1314380-kg.jpg"},{"userId":720483,"totalScriptVotes":1,"totalScripts":1,"totalForumMessages":0,"totalForumMessageVotes":0,"totalScore":2.0,"displayName":"apartin","performanceTier":"Novice","userUrl":"/apartin","rank":"3rd","userAvatarUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/default-thumb.png"}],"pageMessages":[],"feed":[{"activityType":"scriptRun","url":"/paultimothymooney/predicting-idc-in-breast-cancer-histology-images","userName":"paultimothymooney","userAvatarUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/1314380-kg.jpg","date":"2018-01-03T00:58:10.763Z","userDisplayName":"paultimothymooney","title":"Predicting IDC in Breast Cancer Histology Images","versionNumber":5,"userUrl":"/paultimothymooney"},{"activityType":"comment","url":"/forums/f/3465/breast-histology-images/t/44602/more-data","userName":"paultimothymooney","userAvatarUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/1314380-kg.jpg","date":"2017-12-19T18:29:32.077Z","userDisplayName":"paultimothymooney","title":"more data","versionNumber":0,"userUrl":"/paultimothymooney"},{"activityType":"comment","url":"/forums/f/3465/breast-histology-images/t/37044/question-about-data","userName":"paultimothymooney","userAvatarUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/1314380-kg.jpg","date":"2017-12-19T03:33:39.143Z","userDisplayName":"paultimothymooney","title":"Question about data","versionNumber":0,"userUrl":"/paultimothymooney"},{"activityType":"scriptRun","url":"/haitch/learn-tensorflow-cnn","userName":"haitch","userAvatarUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/1420263-gr.jpg","date":"2017-12-07T00:04:25.887Z","userDisplayName":"Haitao Chen","title":"learn tensorflow CNN","versionNumber":31,"userUrl":"/haitch"},{"activityType":"topic","url":"/forums/f/3465/breast-histology-images/t/44602/more-data","userName":"haitch","userAvatarUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/1420263-gr.jpg","date":"2017-11-30T08:26:25.033Z","userDisplayName":"Haitao Chen","title":"more data","versionNumber":0,"userUrl":"/haitch"}],"privateGroups":[{"id":0,"name":"Publicly Accessible"}],"suggestions":[],"discussion":{"canDownvote":false,"dataUrl":"/forums/3465/topics.json","id":3465,"isRootLevel":false,"isSubscribed":false,"initialTopics":null,"paramValues":{"category":"all","kind":"all","page":1,"search":null,"group":"all","sortBy":"hot"}},"currentTab":"home","topicId":null,"isNewTopic":false,"newTopic":{"allowAttachments":false,"authorRanking":null,"authorTier":"novice","authorType":"topic","forumId":3465,"parentName":"Breast Histology Images","parentUrl":"/simjeg/lymphoma-subtype-classification-fl-vs-cll"},"canSeeCategories":true,"categories":{"categories":[{"id":null,"name":"medium","fullPath":null,"listingUrl":null,"topicUrl":null,"fontAwesomeIcon":null,"description":"Dataset size: medium (10MB to 1GB)","isInherited":true,"datasetCount":0,"competitionCount":0,"scriptCount":0,"totalCount":0}],"type":"dataset"},"upvoteSuggestion":{"voteCount":8,"upVoteUrl":"/simjeg/lymphoma-subtype-classification-fl-vs-cll/vote","upvoters":[{"id":1388592,"thumbnailUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/1388592-gp.jpg","userName":"dkt2901","displayName":"Thi Đặng","profileUrl":"/dkt2901"},{"id":580603,"thumbnailUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/580603-kg.JPG","userName":"shamimreza","displayName":"Shamim","profileUrl":"/shamimreza"},{"id":908422,"thumbnailUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/908422-gr.jpg","userName":"tatianass","displayName":"TatianaSaturno","profileUrl":"/tatianass"},{"id":1420263,"thumbnailUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/1420263-gr.jpg","userName":"haitch","displayName":"Haitao Chen","profileUrl":"/haitch"},{"id":906894,"thumbnailUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/906894-kg.png","userName":"fernandotn24","displayName":"FernandoTN","profileUrl":"/fernandotn24"},{"id":866496,"thumbnailUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/866496-gp.jpg","userName":"justinromer","displayName":"Justin","profileUrl":"/justinromer"},{"id":495305,"thumbnailUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/495305-kg.jpg","userName":"mrisdal","displayName":"Megan Risdal","profileUrl":"/mrisdal"},{"id":464684,"thumbnailUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/464684-kg.jpg","userName":"lwkuant","displayName":"Xniper","profileUrl":"/lwkuant"}]},"canSeeNewDatasetsList":true,"canSeeDeletionButton":false,"type":"fileset","licenseGroups":[{"id":1,"name":"Creative Commons","licenses":[{"id":1,"name":"CC0: Public Domain","description":"CC0: Public Domain \u003ca href=\u0022https://creativecommons.org/publicdomain/zero/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/publicdomain/zero/1.0/","displaySequence":1},{"id":3,"name":"CC BY-NC-SA 4.0","description":"CC BY-NC-SA 4.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-nc-sa/4.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-nc-sa/4.0/","displaySequence":2},{"id":8,"name":"CC BY-SA 4.0","description":"CC BY-SA 4.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-sa/4.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-sa/4.0/","displaySequence":3},{"id":10,"name":"CC BY-SA 3.0","description":"CC BY-SA 3.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-sa/3.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-sa/3.0/","displaySequence":4}],"displaySequence":1},{"id":2,"name":"GPL","licenses":[{"id":9,"name":"GPL 2","description":"GPL 2 \u003ca href=\u0022http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html","displaySequence":1}],"displaySequence":2},{"id":3,"name":"Open Database","licenses":[{"id":5,"name":"Database: Open Database, Contents: Database Contents","description":"Database: Open Database \u003ca href=\u0022http://opendatacommons.org/licenses/odbl/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e, Contents: Database Contents \u003ca href=\u0022http://opendatacommons.org/licenses/dbcl/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"http://opendatacommons.org/licenses/dbcl/1.0/","displaySequence":1},{"id":6,"name":"Database: Open Database, Contents: © Original Authors","description":"Database: Open Database \u003ca href=\u0022http://opendatacommons.org/licenses/odbl/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e, Contents: © Original Authors","url":"http://opendatacommons.org/licenses/odbl/1.0/","displaySequence":2}],"displaySequence":3},{"id":4,"name":"Special Cases","licenses":[{"id":7,"name":"World Bank Dataset Terms of Use","description":"World Bank Dataset Terms of Use \u003ca href=\u0022http://web.worldbank.org/WBSITE/EXTERNAL/0,,contentMDK:22547097~pagePK:50016803~piPK:50016805~theSitePK:13,00.html\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"http://web.worldbank.org/WBSITE/EXTERNAL/0,,contentMDK:22547097~pagePK:50016803~piPK:50016805~theSitePK:13,00.html","displaySequence":1},{"id":2,"name":"Reddit API Terms","description":"Reddit API Terms \u003ca href=\u0022https://www.reddit.com/wiki/api\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://www.reddit.com/wiki/api","displaySequence":2}],"displaySequence":4},{"id":5,"name":"Other","licenses":[{"id":11,"name":"Data files © Original Authors","description":"Data files © Original Authors","url":null,"displaySequence":1},{"id":12,"name":"Other (specified in description)","description":"Other (specified in description)","url":null,"displaySequence":2},{"id":4,"name":"Unknown","description":"Unknown","url":null,"displaySequence":3}],"displaySequence":5}],"owners":[{"id":0,"imageUrl":"/image-fetch/0","isOrganization":false,"name":null,"profileUrl":"/","slug":null,"maxFileSizeBytes":null},{"id":412830,"imageUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/412830-gp.jpg","isOrganization":false,"name":"Jegs","profileUrl":"/simjeg","slug":"simjeg","maxFileSizeBytes":10737418240}],"maxCompressedFileBytesAllowed":10737418240,"maxUncompressedFileBytesAllowed":10737418240,"maxTopLevelFilesAllowed":50,"canSeeDatasetWorker":true,"referrer":null,"title":"Breast Histology Images","slug":"lymphoma-subtype-classification-fl-vs-cll","licenseId":1,"data":{"id":2256,"datasetId":1260,"datasetVersionType":"fileset","versionNumber":3,"zipBlobFileId":324860,"totalSize":41647052,"name":"Breast Histology Images","description":"This dataset consists of  5547 breast histology images of size 50 x 50 x 3, curated from [Andrew Janowczyk website][1] and used for a data science tutorial at [Epidemium][2].  The goal is to classify cancerous images (IDC : invasive ductal carcinoma) vs non-IDC images.\n\n\n  [1]: http://www.andrewjanowczyk.com/use-case-6-invasive-ductal-carcinoma-idc-segmentation/\n  [2]: http://www.epidemium.cc/","type":"datasetVersion","children":[{"id":6545,"blobFileId":324858,"url":"/simjeg/lymphoma-subtype-classification-fl-vs-cll/downloads/X.npy","relativePath":"../input/X.npy","creationDate":"2017-05-13T07:38:35Z","ownerSlug":"simjeg","datasetSlug":"lymphoma-subtype-classification-fl-vs-cll","datasetVersionNumber":3,"isDummy":false,"size":34255583,"fullPath":null,"previewUrl":null,"downloadUrl":"/simjeg/lymphoma-subtype-classification-fl-vs-cll/downloads/X.npy","fileType":".npy","validationErrors":null,"name":"X.npy","description":"Numpy array of images","type":"datasetVersionFile","children":[],"collapsed":false,"info":{"metrics":null},"settings":null},{"id":6546,"blobFileId":324859,"url":"/simjeg/lymphoma-subtype-classification-fl-vs-cll/downloads/Y.npy","relativePath":"../input/Y.npy","creationDate":"2017-05-13T07:31:55Z","ownerSlug":"simjeg","datasetSlug":"lymphoma-subtype-classification-fl-vs-cll","datasetVersionNumber":3,"isDummy":false,"size":44456,"fullPath":null,"previewUrl":null,"downloadUrl":"/simjeg/lymphoma-subtype-classification-fl-vs-cll/downloads/Y.npy","fileType":".npy","validationErrors":null,"name":"Y.npy","description":"Numpy array of labels. 0 means no cancer and 1 means cancer","type":"datasetVersionFile","children":[],"collapsed":false,"info":{"metrics":null},"settings":null}],"collapsed":false,"info":{"metrics":null},"settings":{"csvSettings":null,"bigQuerySettings":null}},"isPublished":true,"owner":{"id":412830,"imageUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/412830-gp.jpg","isOrganization":false,"name":"Jegs","profileUrl":"/simjeg","slug":"simjeg","maxFileSizeBytes":10737418240}});performance && performance.mark && performance.mark("DatasetContainer.componentCouldBootstrap");</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            preferredFont: "TeX",
+            availableFonts: ["STIX", "TeX"],
+            linebreaks: {
+                automatic: true
+            },
+            EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+        },
+        tex2jax: {
+            inlineMath: [["\\(", "\\)"], ["\\\\(", "\\\\)"]],
+            displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+            processEscapes: true,
+            ignoreClass: "tex2jax_ignore|dno"
+        },
+        TeX: {
+            noUndefined: {
+                attributes: {
+                    mathcolor: "red",
+                    mathbackground: "#FFEEEE",
+                    mathsize: "90%"
+                }
+            }
+        },
+        Macros: {
+            href: "{}"
+        },
+        skipStartupTypeset: true,
+        messageStyle: "none"
+    });
+</script>
+
+<script type="text/javascript" async crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    </div>
+
+        <div class="site-layout__footer">
+            <footer class="site-footer">
+    <div class="site-footer__content">
+        <div class="site-footer__copyright">
+            <span>&copy; 2018 Kaggle Inc</span>
+        </div>
+        <nav class="site-footer__nav">
+            <a href="/team">Our Team</a>
+            <a href="/terms">Terms</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/contact">Contact/Support</a>
+        </nav>
+        <nav class="site-footer__social">
+            <div data-component-name="SocialIcons"></div><script>var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push();performance && performance.mark && performance.mark("SocialIcons.componentCouldBootstrap");</script>
+        </nav>
+    </div>
+</footer>
+
+        </div>
+</div>
+
+
+
+<script type="text/javascript">
+    var Kaggle = Kaggle || {};
+
+    Kaggle.Current = {
+        hasJupyterNotebookEditor: true,
+        hasEnvironmentVariables: false,
+        hasInteractiveScripts: false,
+        hasStandaloneKernelProxy: true,
+        hasKernelsAsDataSources: true,
+        antiForgeryToken: 's63n7qA0rAQ9ulz_-fUoKVy9W3FIH1b-2x0Zls6bfRg_Z4DAwlQ6ylYWIMBQXE-Uq7Z4IImgjRVrwURWXXJn4uZ7NHg1',
+        isAnonymous: true,
+        isFullScreen: false,
+
+
+
+
+
+
+
+
+    }
+        Kaggle.Current.log = function(){};
+        Kaggle.Current.warn = function(){};
+    var decodeUserDisplayName = function () {
+        var escapedUserDisplayName = Kaggle.Current.userDisplayNameEscaped || "";
+        try {
+          var textVersion = new DOMParser().parseFromString(escapedUserDisplayName, "text/html").documentElement.textContent;
+          if (textVersion) {
+              return textVersion;
+          }
+        } catch(ex) {}
+
+        return escapedUserDisplayName;
+    }
+    Kaggle.Current.userDisplayName = decodeUserDisplayName();
+</script>
+
+
+
+
+
+<script type="text/javascript">
+    var Kaggle = Kaggle || {};
+    Kaggle.PageMessages = [{"id":null,"type":"info","message":null,"dangerousHtmlMessage":"Please \u003ca href=\u0022/account/login?returnUrl=%2Fsimjeg%2Flymphoma-subtype-classification-fl-vs-cll\u0022\u003elogin\u003c/a\u003e to download this dataset.","isPersistent":true,"faIcon":null}];
+</script>
+
+
+<script src="/content/v/5dbea6ee9ce1/shared/js/kaggle.prism.min.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+/* <![CDATA[ */
+goog_snippet_vars = function() {
+    var w = window;
+    w.google_conversion_id = 955616553;
+    w.google_conversion_label = "-SL0CM3tqXMQqZrWxwM";
+    w.google_conversion_value = 0.00;
+    w.google_conversion_currency = "USD";
+    w.google_remarketing_only = false;
+    w.google_conversion_language = "en";
+    w.google_conversion_format = "3";
+    w.google_conversion_color = "ffffff";
+}
+// DO NOT CHANGE THE CODE BELOW.
+goog_report_conversion = function(url) {
+    goog_snippet_vars();
+    window.google_conversion_format = "3";
+    var opt = new Object();
+    opt.onload_callback = function() {
+        if (typeof(url) != 'undefined') {
+            window.location = url;
+        }
+    }
+    var conv_handler = window['google_trackConversion'];
+    if (typeof(conv_handler) == 'function') {
+        conv_handler(opt);
+    }
+}
+/* ]]> */
+</script>
+<script type="text/javascript"
+src="//www.googleadservices.com/pagead/conversion_async.js">
+</script>
+
+
+
+
+
+    <script src="/static/assets/app.js?v=b45d6cb49036"></script>
+
+        <script>
+            (function() {
+                if ('serviceWorker' in navigator) {
+
+                    navigator.serviceWorker.register("/static/assets/service-worker.js").then(function(reg) {
+
+                        reg.onupdatefound = function() {
+
+                            var installingWorker = reg.installing;
+                            installingWorker.onstatechange = function() {
+                                switch (installingWorker.state) {
+                                case 'installed':
+                                    if (navigator.serviceWorker.controller) {
+
+                                        console.log('New or updated content is available.');
+                                    } else {
+
+                                        console.log('Content is now available offline!');
+                                    }
+                                    break;
+                                case 'redundant':
+                                    console.error('The installing service worker became redundant.');
+                                    break;
+                                }
+                            };
+                        };
+                    }).catch(function(e) {
+                      console.error('Error during service worker registration:', e);
+                    });
+                }
+            })();
+        </script>
+</body>
+</html>
